@@ -15,7 +15,7 @@ defmodule Chat.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Chat, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :logger, :phoenix_pubsub_postgres, :postgrex, :poolboy]]
   end
 
   # Specifies your project dependencies
@@ -23,8 +23,9 @@ defmodule Chat.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, github: "phoenixframework/phoenix", override: true},
-     {:phoenix_ecto, "~> 0.1"},
+     {:phoenix_pubsub_postgres, "~> 0.0.1"},
      {:postgrex, ">= 0.0.0"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:exrm, "~> 0.14.16"}]
   end
 end

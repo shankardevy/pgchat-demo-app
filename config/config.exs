@@ -12,7 +12,11 @@ config :chat, Chat.Endpoint,
   secret_key_base: "/RjKJmMO6raXPRTq63qTqid1x6lVKTOP+FTxZHfX6Ogd+1xYmH6eZZFhBu1CIwtg",
   debug_errors: false,
   pubsub: [name: Chat.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+        adapter: PhoenixPubSubPostgres,
+        hostname: "localhost",
+        database: "pgchat",
+        username: "postgres",
+        password: "postgres"]
 
 # Configures Elixir's Logger
 config :logger, :console,
